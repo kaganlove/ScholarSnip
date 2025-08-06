@@ -1,0 +1,9 @@
+body {
+  font-family: sans-serif;
+  padding: 10px;
+}
+
+#output {
+  margin-top: 15px;
+  white-space: pre-wrap;
+}
