@@ -1,1 +1,1 @@
-// Placeholder for background logic
+// Placeholder for OpenAI handler in future versions

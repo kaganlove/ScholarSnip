@@ -1,26 +1,13 @@
-# ScholarSnip
+# ScholarSnip v1.1
 
-Chrome extension that summarizes YouTube videos into timestamped study notes.
+This version extracts the visible transcript from YouTube (if open) and previews the first 1000 characters in an alert.
 
-## How to Run Locally
+### How to Use
 
-1. Open Chrome and go to `chrome://extensions`
-2. Enable Developer Mode (top right)
-3. Click "Load unpacked"
-4. Select the `ScholarSnip` folder
-5. Navigate to any YouTube video
-6. Click the extension icon and "Summarize This Video"
+1. Go to a YouTube video that has a transcript
+2. Click the ScholarSnip extension
+3. Click "Summarize This Video"
+4. Make sure the transcript is visible on the page
+5. The popup will alert the first chunk of the transcript
 
-The extension currently only shows a test alert. Transcript extraction and AI summarization will come next.
-
-## Repo Structure
-
-- `manifest.json` - Chrome extension config
-- `popup.html` / `popup.js` - Extension popup UI
-- `content.js` - Script that will run on YouTube pages
-- `background.js` - Service worker for later API calls
-- `style.css` - Basic styling for popup
-
----
-
-Phase 1 MVP: YouTube support with transcript + AI summary.
+Next step: send this transcript to OpenAI for summarization.

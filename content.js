@@ -1,1 +1,1 @@
-// This will be used to extract transcript from the YouTube DOM
+// Future: move transcript logic here if needed
