@@ -1,18 +1,29 @@
 {
   "manifest_version": 3,
-  "name": "ScholarSnip",
+  "name": "ScholarSnip - Transcript + Summary",
   "version": "1.1",
-  "description": "Summarize YouTube videos into study notes.",
-  "permissions": ["scripting", "activeTab", "storage"],
-  "host_permissions": ["https://www.youtube.com/*"],
-  "action": {
-    "default_popup": "popup.html"
-  },
+  "description": "Opens YouTube transcript and summarizes it using GPT.",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["https://api.openai.com/*"],
   "background": {
     "service_worker": "background.js"
   },
-  "content_scripts": [{
-    "matches": ["https://www.youtube.com/*"],
-    "js": ["content.js"]
-  }]
+  "action": {
+    "default_title": "ScholarSnip",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png"
+    }
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/watch*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png"
+  }
 }
