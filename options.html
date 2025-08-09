@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head><title>ScholarSnip Options</title></head>
+<head>
+  <meta charset="utf-8">
+  <title>ScholarSnip Options</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 20px; }
+    label { display:block; margin-top: 12px; font-weight:600; }
+    input, select { width: 320px; padding:8px; margin-top:6px; }
+    button { margin-top: 16px; padding:8px 12px; border-radius:8px; border:1px solid #ddd; background:#f6f6f6; cursor:pointer;}
+    #status { margin-top:10px; color: #16a34a; }
+  </style>
+</head>
 <body>
-  <h3>Enter OpenAI API Key</h3>
-  <input type="password" id="apiKey" style="width: 300px;" />
-  <button id="saveKey">Save</button>
-  <p id="status"></p>
+  <h2>ScholarSnip Settings</h2>
+  <label>OpenAI API Key
+    <input type="password" id="apiKey" placeholder="sk-...">
+  </label>
+
+  <label>Standards Framework
+    <select id="standardsFramework">
+      <option>None</option>
+      <option>Common Core</option>
+      <option>TEKS</option>
+    </select>
+  </label>
+
+  <label>Subject (optional)
+    <input type="text" id="subject" placeholder="e.g., Algebra I, Biology, US History">
+  </label>
+
+  <label>Grade Level (optional)
+    <input type="text" id="gradeLevel" placeholder="e.g., Grade 8, High School">
+  </label>
+
+  <button id="saveKey">Save Settings</button>
+  <div id="status"></div>
+
   <script src="options.js"></script>
 </body>
 </html>

@@ -1,1 +1,1 @@
-// No background behavior needed for now
+// No background code needed

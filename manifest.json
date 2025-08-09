@@ -1,21 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "ScholarSnip - Transcript + Summary",
-  "version": "1.1",
-  "description": "Opens YouTube transcript and summarizes it using GPT.",
-  "permissions": ["storage", "scripting", "activeTab"],
+  "name": "ScholarSnip - Transcript → Summary & Curriculum",
+  "version": "1.2.1",
+  "description": "Open a YouTube transcript, summarize it, and generate curriculum (objectives, competency, lesson outline).",
+  "permissions": ["storage", "activeTab", "scripting", "clipboardWrite"],
   "host_permissions": ["https://api.openai.com/*"],
-  "background": {
-    "service_worker": "background.js"
-  },
+  "background": { "service_worker": "background.js" },
+  "options_page": "options.html",
   "action": {
     "default_title": "ScholarSnip",
     "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icon16.png"
-    }
+    "default_icon": { "16": "icon16.png", "32": "icon32.png" }
   },
-  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": ["*://www.youtube.com/watch*"],
@@ -23,7 +19,5 @@
       "run_at": "document_idle"
     }
   ],
-  "icons": {
-    "16": "icon16.png"
-  }
+  "icons": { "16": "icon16.png", "32": "icon32.png" }
 }
