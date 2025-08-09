@@ -11,3 +11,5 @@ This version extracts the visible transcript from YouTube (if open) and previews
 5. The popup will alert the first chunk of the transcript
 
 Next step: send this transcript to OpenAI for summarization.
+
+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
