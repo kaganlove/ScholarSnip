@@ -1,23 +1,37 @@
 {
   "manifest_version": 3,
-  "name": "ScholarSnip - Transcript → Summary & Curriculum",
-  "version": "1.2.1",
-  "description": "Open a YouTube transcript, summarize it, and generate curriculum (objectives, competency, lesson outline).",
-  "permissions": ["storage", "activeTab", "scripting", "clipboardWrite"],
-  "host_permissions": ["https://api.openai.com/*"],
-  "background": { "service_worker": "background.js" },
+  "name": "ScholarSnip (Backend + Classic UI)",
+  "version": "0.8.0",
+  "description": "Summarize/build curriculum with a secure server-side key and GitHub standards. Classic on-page UI + Options.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://localhost:3001/*"
+  ],
   "options_page": "options.html",
-  "action": {
-    "default_title": "ScholarSnip",
-    "default_popup": "popup.html",
-    "default_icon": { "16": "icon16.png", "32": "icon32.png" }
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   },
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/watch*"],
-      "js": ["content.js"],
+      "matches": [
+        "*://www.youtube.com/watch*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "style.css"
+      ],
       "run_at": "document_idle"
     }
-  ],
-  "icons": { "16": "icon16.png", "32": "icon32.png" }
+  ]
 }

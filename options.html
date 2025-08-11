@@ -1,41 +1,39 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>ScholarSnip Options</title>
+  <meta charset="utf-8" />
+  <title>ScholarSnip Settings</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 20px; }
-    label { display:block; margin-top: 12px; font-weight:600; }
-    input, select { width: 320px; padding:8px; margin-top:6px; }
-    button { margin-top: 16px; padding:8px 12px; border-radius:8px; border:1px solid #ddd; background:#f6f6f6; cursor:pointer;}
-    #status { margin-top:10px; color: #16a34a; }
+    body { font-family: system-ui, sans-serif; max-width: 700px; margin: 24px auto; padding: 0 16px; }
+    h1 { margin-bottom: 16px; }
+    label { display: block; margin: 12px 0 6px; }
+    select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .actions { margin-top: 16px; }
+    button { padding: 10px 14px; border: 0; border-radius: 8px; background: #0b5ed7; color: #fff; cursor: pointer; }
+    .hint { font-size: 12px; opacity: .75; margin-top: 8px; }
   </style>
 </head>
 <body>
-  <h2>ScholarSnip Settings</h2>
-  <label>OpenAI API Key
-    <input type="password" id="apiKey" placeholder="sk-...">
-  </label>
-
-  <label>Standards Framework
-    <select id="standardsFramework">
-      <option>None</option>
-      <option>Common Core</option>
-      <option>TEKS</option>
-    </select>
-  </label>
-
-  <label>Subject (optional)
-    <input type="text" id="subject" placeholder="e.g., Algebra I, Biology, US History">
-  </label>
-
-  <label>Grade Level (optional)
-    <input type="text" id="gradeLevel" placeholder="e.g., Grade 8, High School">
-  </label>
-
-  <button id="saveKey">Save Settings</button>
-  <div id="status"></div>
-
+  <h1>ScholarSnip Settings</h1>
+  <label>Standards Framework</label>
+  <select id="framework"></select>
+  <div class="row">
+    <div>
+      <label>Subject (optional)</label>
+      <select id="subject"></select>
+    </div>
+    <div>
+      <label>Grade Level (optional)</label>
+      <select id="grade"></select>
+    </div>
+  </div>
+  <div class="actions">
+    <button id="save">Save Settings</button>
+    <div class="hint">Your API key is kept on the backend. This page only stores your preferences.</div>
+  </div>
   <script src="options.js"></script>
 </body>
 </html>
